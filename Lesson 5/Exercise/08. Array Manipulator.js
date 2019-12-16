@@ -9,9 +9,14 @@ function arrayManipulator(array, commandsArray) {
         let elements = [];
 
         if (command === 'print') {
+            //this is because more than 6 elements are printed 
+            //on multiple rows and we want all on 1 row
+            // and console.log(array); dont work in Judge for more than
+            // 6 elements
+            
             console.log(`[ ${array.join(', ')} ]`);
             break;
-        }            
+        }
 
         switch (command) {
             case 'add':
@@ -75,13 +80,13 @@ function arrayManipulator(array, commandsArray) {
 
     function sumPairs() {
         let resultArray = array
-                            .reduce((acc, num, idx) => { 
-                                idx % 2 === 0 ? 
-                                acc.push(num) : 
-                                acc[acc.length - 1] += num;
-                                
-                                return acc;
-                            }, []);
+            .reduce((acc, num, idx) => {
+                idx % 2 === 0 ?
+                    acc.push(num) :
+                    acc[acc.length - 1] += num;
+
+                return acc;
+            }, []);
 
         array = resultArray.slice(0);
     }

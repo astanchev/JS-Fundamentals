@@ -20,8 +20,8 @@ function systemsRegister(inputMat) {
 
     Object.entries(systemsObj)
         .sort((systemA, systemB) => {
-            return computeLength(systemB[1]) - computeLength(systemA[1])
-                || systemA[0].localeCompare(systemB[0]);
+            return computeLength(systemB[1]) - computeLength(systemA[1]) ||
+                systemA[0].localeCompare(systemB[0]);
         })
         .forEach((systemsArr) => {
             let [system, componentsObj] = systemsArr;

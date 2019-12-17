@@ -3,7 +3,7 @@ function systemRegister(data) {
 
     for (const line of data) {
         let [system, component, subcomponent] = line.split(' | ');
-        
+
         if (!systems.hasOwnProperty(system)) {
             let obj = {[component]: [subcomponent]};
             systems[system] = obj;
@@ -11,7 +11,7 @@ function systemRegister(data) {
             if (!systems[system].hasOwnProperty(component)) {
                 systems[system][component] = [subcomponent];
             } else {
-                systems[system][component].push(subcomponent)
+                systems[system][component].push(subcomponent);
             }
         }
     }
@@ -24,7 +24,7 @@ function systemRegister(data) {
         Object.entries(e[1]).sort((a, b) => b[1].length - a[1].length)
                             .forEach(e => {
                                 console.log(`|||${e[0]}`);
-                                e[1].forEach(e => console.log(`||||||${e}`))
+                                e[1].forEach(e => console.log(`||||||${e}`));
                             });
     });
     
